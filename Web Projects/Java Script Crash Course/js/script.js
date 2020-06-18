@@ -33,7 +33,7 @@ function removeContent(){
 
 function generatePhoto(){
     var img = document.createElement("img");
-    img.src = "/img/mans.jfif";
+    img.src = "img/mans.jfif";
     img.setAttribute('height', '100px');
     img.setAttribute('width', '100px');
     img.style = "margin: 1rem; box-shadow: 5px 6px 7px black; z-index: 20;";
