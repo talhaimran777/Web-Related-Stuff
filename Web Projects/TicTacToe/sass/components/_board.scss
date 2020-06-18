@@ -1,0 +1,24 @@
+.board{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    width: 50rem;
+    margin: 0 auto;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.109);
+    &__squares{
+        text-align: center;
+        width: 9rem;
+        font-size: 2.6rem;
+        padding: 2rem;
+        background-color: rgba(192, 192, 192, 0.26);
+        margin: 2rem;
+        box-shadow: 4px 5px 8px black;
+        color: silver;
+        &:hover{
+            transform: translateY(-0.7rem);
+            transition: all 0.3s ease;
+        }
+    }
+}

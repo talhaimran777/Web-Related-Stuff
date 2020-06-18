@@ -13,11 +13,62 @@ html {
 
 body {
   text-rendering: optimizeLegibility;
+  padding: 0 2rem;
 }
 
 body {
-  color: white;
+  color: rgba(192, 192, 192, 0.438);
   background-color: black;
   font-size: 1.6rem;
+}
+
+.primary-heading {
+  font-size: 5rem;
+  text-align: center;
+  padding: 2rem;
+  margin-bottom: 6rem;
+}
+
+.board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+  width: 50rem;
+  margin: 0 auto;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.109);
+}
+
+.board__squares {
+  text-align: center;
+  width: 9rem;
+  font-size: 2.6rem;
+  padding: 2rem;
+  background-color: rgba(192, 192, 192, 0.26);
+  margin: 2rem;
+  -webkit-box-shadow: 4px 5px 8px black;
+          box-shadow: 4px 5px 8px black;
+  color: silver;
+}
+
+.board__squares:hover {
+  -webkit-transform: translateY(-0.7rem);
+          transform: translateY(-0.7rem);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.game-container {
+  height: 115vh;
+  margin: 0 auto;
+  padding-bottom: 100px;
 }
 /*# sourceMappingURL=main.css.map */
