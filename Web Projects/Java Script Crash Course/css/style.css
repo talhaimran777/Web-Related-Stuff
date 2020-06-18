@@ -1,0 +1,135 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    text-rendering: optimizeLegibility;
+}
+
+.btn{
+    font-size: 15px;
+}
+.my-javascript-projects{
+    width: 95rem;
+    margin: 20rem auto;
+    padding: 2rem;
+    border: 2px solid red;
+}
+.challenge-1{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid black;
+}
+
+.challenge-2, #challenge-3, #challenge-4{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 60rem;
+    height: auto;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid black;
+    margin-bottom: 0;
+}
+
+#challenge-4{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    margin: 2rem auto;
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid black;
+    margin-bottom: 0;
+}
+.challenge-1__header, .challenge-2__header, .challenge-3__header, .challenge-4__header{
+    border: 2px solid black;
+    font-size: 4rem;
+    padding: 3rem 1rem;
+    order: -1;
+}
+
+.challenge-1__buttons, .challenge-2__buttons{
+    display: flex;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border: 2px solid black;
+    justify-content: space-around;
+}
+#challenge-1__answer{
+    height: auto;
+    border: 2px solid black;
+    padding: 5rem;
+}
+
+#challenge-2__cats{
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    justify-content: space-around;
+}
+
+#challenge-3__choice-section{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    align-content: center;
+    justify-content: space-around;
+    height: 200px;
+    background-color: rgba(192, 192, 192, 0.459);
+}
+
+.challenge-3__choice-section__photo{
+    height: 150px;
+    width: 150px;
+   
+}
+
+.challenge-3__choice-section__photo:hover{
+    box-shadow: 4px 4px 10px black;
+}
+
+.challenge-3__button{
+    margin-top: 5rem;
+    padding: 2rem;
+    border: 2px solid black;
+}
+
+.challenge-3__button--btn{
+    padding: 1rem;
+    width: 20rem;
+    order: 1;
+}
+
+.challenge-4__button{
+    background-color: silver;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5rem;
+    padding: 2rem;
+    border: 2px solid black;
+    width: auto;
+}
+
+.style-from{
+    font-size: 16px;
+}
