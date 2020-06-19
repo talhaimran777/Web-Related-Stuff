@@ -37,7 +37,8 @@ body{
 
 .active-panel{
     position: relative;
-    background-color: white;
+    background-color: rgb(56, 54, 54);
+    color: white;
 }
 
 .active-panel .player-0-name::after, .active-panel  .player-1-name::after{
