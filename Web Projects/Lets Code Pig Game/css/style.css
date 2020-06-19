@@ -77,6 +77,18 @@ body{
     font-size: 3rem;
     justify-content: space-between;
     width: 30rem;
+    padding: 1rem;
+    border: 3px solid red;
+    background-color: red;
+    color: white;
+
+}
+
+.active-panel .round-score{
+    background-color:white;
+    border:  3px solid red;
+    color: red;
+
 }
 
 .round-score h4{
@@ -141,8 +153,35 @@ body{
 
 .dice{
     position: absolute;
-    display: none;
     top: 0;
     left: 0;
     z-index: 0;
+    display: none;
 }
+
+.round-summary{
+    position: absolute;
+    top: 90%;
+    left: 25%;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+#round-summary--player-0, #round-summary--player-1{
+    letter-spacing: 1rem;
+    display: none;
+}
+
+
+.congrats-message{
+    display: none;
+    font-size: 5rem;
+    color: whitesmoke;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 600;
+}
+
+

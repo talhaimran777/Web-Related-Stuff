@@ -10,13 +10,13 @@
 
     <body>
         <section class="game-container">
-            <div class="player-0-panel   active-panel">
+            <div class = "player-0-panel active-panel">
                <h1 class=" name player-0-name">
                    Player 1
                </h1>
 
                <div class="display-score">
-                   <h2 class = "display-score--player-0">  </h2>
+                   <h2 id = "display-score--player-0">  </h2>
                </div>
 
                <div class="round-score">
@@ -36,34 +36,41 @@
                 </h1>
 
                 <div class="display-score">
-                    <h2 class = "display-score--player-1">  </h2>
+                    <h2 id = "display-score--player-1">  </h2>
                 </div>
 
-                <div class="round-score round-score--player-1">
+                <div class="round-score">
                     <h4 class="round-score-text">
                         Round Score
                     </h4>
 
-                    <h4 class="round-score-no">
+                    <h4 class="round-score-no" id = "round-score--player-1">
                         
                     </h4>
                 </div>
             </div>
+
         </section>
         
         <a class = "btn btn--rolldice" onclick="rollDice()"> Roll Dice </a>
-        <a class = "btn btn--lockscore">Hold</a>
-        <a class = "btn btn--newgame">New Game</a>
+        <a class = "btn btn--lockscore" onclick = "lockScore()">Hold</a>
+        <a class = "btn btn--newgame" onclick="resetGame()">New Game</a>
         <div class="display-dice">
             <div class = "all-dice-position">
-                    <img class = "dice display-dice--1" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-1.png">
-                    <img class = "dice display-dice--2" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-2.png">
-                    <img class = "dice display-dice--3" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-3.png">
-                    <img class = "dice display-dice--4" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-4.png">
-                    <img class = "dice display-dice--5" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-5.png">
-                    <img class = "dice display-dice--6" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-6.png">
+                    <img class = "dice" id = "display-dice--1" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-1.png">
+                    <img class = "dice" id = "display-dice--2" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-2.png">
+                    <img class = "dice" id = "display-dice--3" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-3.png">
+                    <img class = "dice" id = "display-dice--4" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-4.png">
+                    <img class = "dice" id = "display-dice--5" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-5.png">
+                    <img class = "dice" id = "display-dice--6" height = "100px" width = "100px" src = "../Lets Code Pig Game/img/dice-6.png">
             </div> 
         </div>
+
+
+
+        <p class = "congrats-message">
+            Congrats Player 1 Wins
+        </p>
         
         <script src = "../Lets Code Pig Game/js/script.js"></script>
     </body>
