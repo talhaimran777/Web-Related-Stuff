@@ -125,3 +125,24 @@ body{
     top: 10%;
     left: 42.7%;
 }
+
+
+.display-dice{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.all-dice-position{
+    position: relative;
+    padding: 5rem;
+}
+
+.dice{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
