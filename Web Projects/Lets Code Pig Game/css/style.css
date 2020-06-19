@@ -1,0 +1,126 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    text-rendering: optimizeLegibility;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+}
+
+.game-container{
+    display: flex;
+    height: 57.6rem;
+    background-color: blue;
+}
+
+.player-0-panel, .player-1-panel{
+    position: relative;
+    height: 57.6rem;
+    flex: 50%;
+    background-color: silver;
+}
+
+
+.name{
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 8rem;
+    font-weight: 300; 
+}
+
+.active-panel{
+    position: relative;
+    background-color: white;
+}
+
+.active-panel .player-0-name::after, .active-panel  .player-1-name::after{
+    display: inline-block;
+    content: " ";
+    background-color: red;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+}
+
+.active-panel .display-score--player-0, .active-panel .display-score--player-1,
+.active-panel .name, .active-panel .round-score-text, .active-panel .round-score-no{
+    font-weight: 500;
+}
+
+.display-score{
+    font-size: 5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.display-score h2{
+    font-weight: 300;
+}
+
+.round-score{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 75%;
+    left: 34%;
+    font-size: 3rem;
+    justify-content: space-between;
+    width: 30rem;
+}
+
+.round-score h4{
+    font-weight: 300;
+}
+
+.btn{
+    position: absolute;
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 1rem;
+    width: 20rem;
+    top: 90%;
+    border: none;
+    box-shadow: 2px 3px 5px black;
+    font-weight: 400;
+}
+
+.btn--rolldice{
+    top: 80%;
+    left: 42.7%;
+}
+
+.btn--lockscore{
+    top: 65%;
+    left: 46.2%;
+    width: 10rem;
+}
+
+.btn:hover{
+    transform: translateY(-1px);
+    transition: all 0.1s ease;
+    box-shadow: 4px 5px 7px black;
+    cursor: pointer;
+}
+
+.btn:active{
+    transform: translateY(0);
+    transition: all 0.1s ease;
+    box-shadow: 2px 3px 5px black;
+}
+
+.btn--newgame{
+    top: 10%;
+    left: 42.7%;
+}

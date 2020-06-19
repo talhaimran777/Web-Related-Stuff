@@ -8,3 +8,9 @@ GAME RULES:
 - The first player to reach 100 points on GLOBAL score wins the game
 
 */
+
+alert("Hellow");
+
+playerScores = [0,0];
+playersOverallScores = [0,0];
+activePlayer = 0;
