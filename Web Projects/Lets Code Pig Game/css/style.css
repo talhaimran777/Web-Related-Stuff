@@ -16,13 +16,13 @@ body{
 
 .game-container{
     display: flex;
-    height: 57.6rem;
+    height: 62.5rem;
     background-color: blue;
 }
 
 .player-0-panel, .player-1-panel{
     position: relative;
-    height: 57.6rem;
+    height: 62.5rem;
     flex: 50%;
     background-color: silver;
 }
