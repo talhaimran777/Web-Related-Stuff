@@ -1,24 +1,43 @@
 .board{
+    position: absolute;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     height: auto;
-    width: 50rem;
-    margin: 0 auto;
-    justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.109);
-    &__squares{
-        text-align: center;
-        width: 9rem;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    &__square{
         font-size: 2.6rem;
+        text-align: center;
         padding: 2rem;
-        background-color: rgba(192, 192, 192, 0.26);
-        margin: 2rem;
-        box-shadow: 4px 5px 8px black;
-        color: silver;
+        height: 90px;
+        width: 90px;
+        border: 3px solid black;
+
         &:hover{
-            transform: translateY(-0.7rem);
-            transition: all 0.3s ease;
+            background-color: lightblue;
+            cursor: pointer;
+        }
+
+        &--1, &--2, &--3{
+            border-top: none;
+        }
+
+        &--1, &--4, &--7{
+            border-left: none;
+        }
+
+        &--3, &--6, &--9{
+            border-right: none;
+        }
+
+        &--7, &--8, &--9{
+            border-bottom: none;
         }
     }
+
+
 }

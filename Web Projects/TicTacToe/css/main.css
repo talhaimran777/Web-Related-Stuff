@@ -17,58 +17,77 @@ body {
 }
 
 body {
-  color: rgba(192, 192, 192, 0.438);
-  background-color: black;
+  color: black;
+  background-color: white;
   font-size: 1.6rem;
 }
 
-.primary-heading {
+.heading-primary {
   font-size: 5rem;
-  text-align: center;
   padding: 2rem;
   margin-bottom: 6rem;
 }
 
 .board {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: auto;
-  width: 50rem;
-  margin: 0 auto;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.109);
+  width: 350px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
-.board__squares {
-  text-align: center;
-  width: 9rem;
+.board__square {
   font-size: 2.6rem;
+  text-align: center;
   padding: 2rem;
-  background-color: rgba(192, 192, 192, 0.26);
-  margin: 2rem;
-  -webkit-box-shadow: 4px 5px 8px black;
-          box-shadow: 4px 5px 8px black;
-  color: silver;
+  height: 90px;
+  width: 90px;
+  border: 3px solid black;
 }
 
-.board__squares:hover {
-  -webkit-transform: translateY(-0.7rem);
-          transform: translateY(-0.7rem);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.board__square:hover {
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.board__square--1, .board__square--2, .board__square--3 {
+  border-top: none;
+}
+
+.board__square--1, .board__square--4, .board__square--7 {
+  border-left: none;
+}
+
+.board__square--3, .board__square--6, .board__square--9 {
+  border-right: none;
+}
+
+.board__square--7, .board__square--8, .board__square--9 {
+  border-bottom: none;
+}
+
+.btn {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  width: 12rem;
 }
 
 .game-container {
-  height: 115vh;
+  position: relative;
+  width: 60rem;
+  height: 100vh;
   margin: 0 auto;
-  padding-bottom: 100px;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

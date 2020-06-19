@@ -15,22 +15,23 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <section class="game-container">
-        <h1 class = "primary-heading">&nbsp;</h1>
+    <div class="game-container">
 
+        <h2 class="heading-primary"> Tic Tac Toe</h2>
         <div class="board">
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
-            <div class="board__squares" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--1" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--2" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--3" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--4" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--5" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--6" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--7" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--8" onclick="placeSomeThing(this)">&nbsp;</div>
+            <div class="board__square board__square--9" onclick="placeSomeThing(this)">&nbsp;</div>
         </div>
-    </section>
 
+        <button class = "btn btn-primary btn-lg" onClick = "startGame()"> Start Game</button>
+    </div>
     <script src = "/TicTacToe/js/script.js"></script>
 </body>
 </html>
