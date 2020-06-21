@@ -1,4 +1,4 @@
-
+alert("vs AI");
 // Adding event listener to all the squares
 function addClickButtonToSquares(){
     for(let i = 1; i <= 9; i++ ){
@@ -74,8 +74,6 @@ function check(w, board, currentPlayer){
             var win = document.getElementById("winning-message");
             win.style.display = "block";
             win.textContent = "Draw"
-            winner = false;
-            attempts = 0;
     }
 
 }
@@ -184,4 +182,9 @@ function restartGame(){
 
     let winningMessage = document.getElementById("winning-message-block");
     winningMessage.style.display = "none";
+
+    // Setting Variables back to default
+    currentPlayer  = human;
+    winner = false;
+    attempts = 0;
 }
