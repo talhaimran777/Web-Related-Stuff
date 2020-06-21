@@ -1,0 +1,14 @@
+@import "../sass/abstracts/variables";
+@import "../sass/abstracts/mixins";
+@import "../sass/abstracts/functions";
+
+@import "../sass/base/base";
+@import "../sass/base/typography";
+@import "../sass/base/animations";
+@import "../sass/base/utility";
+
+@import "../sass/components/board";
+@import "../sass/components/button";
+@import "../sass/components/congrats";
+
+@import "../sass/layout/game";
