@@ -1,4 +1,204 @@
-alert("vs AI");
+/* function Person(name, age){
+    this.name = name;
+    this.age = age;
+
+    this.bio = function(){
+        anotherFunc(); 
+    }
+
+    anotherFunc = function(){
+        console.log("Hello");
+    }
+} */
+
+
+ let winner  = false;
+ let board = {
+    map: [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ], 
+
+    render: function(){
+        var position = 1;
+        for(let i = 0; i < 3; i++){
+            for(let j = 0; j < 3; j++){
+                if(board['map'][i][j] == "" ){
+                    document.querySelector(".board__square--"+position).textContent = this.map[i][j]; 
+                }
+                else{
+                    document.querySelector(".board__square--"+position).textContent = this.map[i][j];
+                    document.querySelector(".board__square--"+position).removeEventListener("click", p1.takeTurn);
+                }     
+                position++;
+            }
+        }
+    },
+
+    checkBoard: function(i, j){ // return true if spot filled
+        return board['map'][i][j] == "" ? false : true;
+    },
+
+    getFreeSpot: function(){
+        for(let i = 0; i < 3; i++){
+            for(let j = 0; j < 3; j++){
+                if(this.map[i][j] == ""){
+                    return[i, j];
+                }
+            }
+        }
+    }
+}
+
+function Game(){
+    ob = {};
+
+    ob.addClickButtonToAllSquares = function(){
+        for(let i = 1; i <= 9; i++ ){
+            document.querySelector(".board__square--"+i).addEventListener("click", p1.takeTurn, {once: true});
+        }
+    }
+
+    ob.switchPlayer = function(){
+        if(currentPlayer == p1){
+            currentPlayer = p2;
+            console.log("!! Player Switched !!");
+            p2.takeTurn();
+        }
+        else{
+            currentPlayer = p1; 
+        }
+         
+    }
+
+    ob.checkWinner = function(currentPlayer){
+
+    }
+    return ob;
+}
+
+function AI(name, symbol){
+    this.name = name;
+    this.symbol = symbol;
+
+    /* pickRandomSquare = function(){
+        var no = Math.floor(Math.random() * 9) + 1;
+        var arrIndices = getIndicesOfMatchedBoardSpotWrtSquares(no);
+        var i = arrIndices[0];
+        var j = arrIndices[1];
+        board['map'][i][j] = this.symbol;
+        board.render();
+    } */
+
+    this.takeTurn = function(){
+        console.log(this.name);
+        //this.bio();
+        this.pickRandomSquare();
+    }
+
+    this.pickRandomSquare = function(){
+        //console.log("!! Will be doing some random stuff here !!");
+        var no = Math.floor(Math.random() * 9) + 1;
+        //console.log("Random Square " + no);
+        var idxs = getIndicesOfMatchedBoardSpotWrtSquares(no.toString());
+        //console.log("Must be idices "+ idxs);
+        var i = idxs[0];
+        var j = idxs[1];
+
+        var check = board.checkBoard(i, j);
+        if(check == true){
+            //console.log("spot Not available");
+            var freeSpotIdxs = board.getFreeSpot();
+            this.placeSymbol(freeSpotIdxs[0], freeSpotIdxs[1]);
+        }
+        else{
+            //console.log("spot available");
+            this.placeSymbol(i, j);
+        }
+       
+    }
+
+    this.placeSymbol = function(i, j){
+        //console.log("!! Ai Will place through this function !!");
+        board['map'][i][j] = symbol;
+        board.render();
+        game.switchPlayer();
+    }
+}
+function Player(name, symbol){
+    this.name = name;
+    this.symbol = symbol;
+
+    this.takeTurn = function(e){
+        var arrIndices = getIndicesOfMatchedBoardSpotWrtSquares(e.target.id);
+        var ithRowIdx = arrIndices[0];
+        var jthColIdx = arrIndices[1];
+        //console.log(e.target);
+        placeSymbol(board, symbol, ithRowIdx, jthColIdx);
+    }
+
+    placeSymbol = function(board, symbol, i, j){
+        board['map'][i][j] = symbol;
+        board.render();
+        game.switchPlayer();
+    }
+}
+
+function getIndicesOfMatchedBoardSpotWrtSquares(squareNo){
+    switch(squareNo){
+        case "1":
+            var idxs = [0,0];
+            return idxs;
+            break;
+        case "2":
+            var idxs = [0,1];
+            return idxs;
+            break; 
+        case "3":
+            var idxs = [0,2];
+            return idxs;
+            break;
+        case "4":
+            var idxs = [1,0];
+            return idxs;
+            break;
+        case "5":
+            var idxs = [1,1];
+            return idxs;
+            break; 
+        case "6":
+            var idxs = [1,2];
+            return idxs;
+            break;
+        case "7":
+            var idxs = [2,0];
+            return idxs;
+            break;
+        case "8":
+            var idxs = [2,1];
+            return idxs; 
+            break;         
+        case "9":
+            var idxs = [2,2];
+            return idxs;                                         
+            break;
+        default:
+            return "Please Give String as an argument to this function!!";
+            break;   
+    }
+}
+
+
+const p1 = new Player("Talha Imran", "X");
+const p2 = new AI("Computer", "O");
+const game = Game();
+let currentPlayer = p1;
+game.addClickButtonToAllSquares(); 
+
+
+
+/* alert("vs AI");
 // Adding event listener to all the squares
 function addClickButtonToSquares(){
     for(let i = 1; i <= 9; i++ ){
@@ -187,4 +387,4 @@ function restartGame(){
     currentPlayer  = human;
     winner = false;
     attempts = 0;
-}
+} */
