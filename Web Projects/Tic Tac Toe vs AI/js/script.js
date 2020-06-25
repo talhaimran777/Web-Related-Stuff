@@ -45,6 +45,14 @@ function Game(){
     ob.addClickButtonToAllSquares = function(){
         for(let i = 1; i <= 9; i++ ){
             document.querySelector(".board__square--"+i).addEventListener("click", p1.takeTurn, {once: true});
+        } 
+    }
+
+    ob.addClickButtonToEmptySquares = function(){
+        for(let i = 1; i <= 9; i++ ){
+            if(document.querySelector(".board__square--"+i).textContent == ""){
+                document.querySelector(".board__square--"+i).addEventListener("click", p1.takeTurn, {once: true});
+            }
         }
     }
 
@@ -54,16 +62,31 @@ function Game(){
         }
     }
 
+    ob.notAllowedBackgroundColor = function(){
+        for(let i = 1; i <= 9; i++ ){
+            var a = document.querySelector(".board__square--"+i).classList.add("not-allowed");
+            console.log(a);
+        }
+    }
+
+    ob.allowedBackgroundColor = function(){
+        for(let i = 1; i <= 9; i++ ){
+            if(document.querySelector(".board__square--"+i).textContent == ""){
+                document.querySelector(".board__square--"+i).classList.remove("not-allowed");
+            }
+            
+        }
+    }
     ob.switchPlayer = function(){
         if(currentPlayer == p1){
             currentPlayer = p2;
             setTimeout(() => {
                 p2.takeTurn();
-            }, 500);
+            }, 2000);
         }
         else{
             currentPlayer = p1;
-            game.addClickButtonToAllSquares(); 
+            game.addClickButtonToEmptySquares();
         }
          
     }
@@ -105,6 +128,8 @@ function AI(name, symbol){
         board['map'][i][j] = symbol;
         board.render();
         game.switchPlayer();
+        game.allowedBackgroundColor();
+        allowed = true;
     }
 }
 function Player(name, symbol){
@@ -112,17 +137,22 @@ function Player(name, symbol){
     this.symbol = symbol;
 
     this.takeTurn = function(e){
-        var arrIndices = getIndicesOfMatchedBoardSpotWrtSquares(e.target.id);
-        var ithRowIdx = arrIndices[0];
-        var jthColIdx = arrIndices[1];
-        placeSymbol(board, symbol, ithRowIdx, jthColIdx);
-        game.removeClickButtonToAllSquares();
+        if(allowed === true){
+            var arrIndices = getIndicesOfMatchedBoardSpotWrtSquares(e.target.id);
+            var ithRowIdx = arrIndices[0];
+            var jthColIdx = arrIndices[1];
+            placeSymbol(board, symbol, ithRowIdx, jthColIdx);
+            allowed = false;
+            game.notAllowedBackgroundColor();
+        }
+        
     }
 
     placeSymbol = function(board, symbol, i, j){
         board['map'][i][j] = symbol;
         board.render();
         game.switchPlayer();
+        game.removeClickButtonToAllSquares();
     }
 }
 
@@ -175,4 +205,5 @@ const p1 = new Player("Talha Imran", "X");
 const p2 = new AI("Computer", "O");
 const game = Game();
 let currentPlayer = p1;
+let allowed = true;
 game.addClickButtonToAllSquares(); 
