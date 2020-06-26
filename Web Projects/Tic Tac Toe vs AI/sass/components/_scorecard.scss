@@ -1,0 +1,32 @@
+.scorecard{
+    position: absolute;
+    top: 20rem;
+    background-color: rgba(0, 0, 0, 0.493);
+    box-shadow: 5px 5px 7px black;
+    text-align: center;
+    padding: 3rem;
+    transform: skewX(-7deg);
+    backface-visibility: hidden;
+    &__text{
+        color: black;
+        letter-spacing: 1rem;
+        font-weight: 500;
+        font-size: 200%;
+        margin-bottom: 2rem;
+        transform: skewX(7deg);
+    }
+
+    &__no{
+        font-size: 290%;
+        transform: skewX(7deg);
+        font-weight: 500;
+        color: white;
+    }
+}
+.human-scorecard{
+    left: 10rem;   
+}
+
+.computer-scorecard{
+    right: 3rem;
+}

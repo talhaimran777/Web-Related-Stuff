@@ -15,6 +15,17 @@
     <title>Tic Tac Toe</title>
 </head>
 <body>
+
+    <div class = "scorecard human-scorecard">
+        <h1 class = "scorecard__text"> Your Score </h1>
+        <p class = "scorecard__no">0</p>
+    </div>
+
+    <div class = "scorecard computer-scorecard">
+        <h1 class = "scorecard__text"> Computer Score </h1>
+        <p class = "scorecard__no">0</p>
+    </div>
+
     <div class="game-container">
 
         <h2 class="heading-primary"> Tic Tac Toe</h2>
@@ -29,7 +40,10 @@
             <div class="board__square board__square--8" id = "8">&nbsp;</div>
             <div class="board__square board__square--9" id = "9">&nbsp;</div>
         </div>
-        <!--<button class = "btn btn-primary btn-lg" onClick = "startGame()"> Start Game</button> -->
+        <a class = "btn btn-white" type="button" > Reset Scores</a>
+        
+    
+       <!--   -->
     </div>
 
     <div id = "winning-message-block"> 

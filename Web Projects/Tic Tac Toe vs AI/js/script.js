@@ -1,4 +1,4 @@
-
+//alert("Hello");
 
  let winner  = false;
  let board = {
@@ -82,7 +82,7 @@ function Game(){
             currentPlayer = p2;
             setTimeout(() => {
                 p2.takeTurn();
-            }, 2000);
+            }, 500);
         }
         else{
             currentPlayer = p1;
