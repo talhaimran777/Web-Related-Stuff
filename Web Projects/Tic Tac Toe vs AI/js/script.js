@@ -143,7 +143,7 @@ function Game(){
             currentPlayer = p2;
             setTimeout(() => {
                 p2.takeTurn();
-            }, 200);
+            }, 1000);
         }
         else{
             currentPlayer = p1;
