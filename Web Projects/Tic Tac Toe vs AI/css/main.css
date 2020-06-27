@@ -89,8 +89,6 @@ body {
 
 .btn {
   position: absolute;
-  top: 85%;
-  left: 26.8%;
   width: 20rem;
   height: 5rem;
   font-size: 2.6rem;
@@ -99,8 +97,8 @@ body {
   -webkit-box-shadow: 7px 7px 9px black;
           box-shadow: 7px 7px 9px black;
   border-radius: 25px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
   /* &:active{
         transition: all 0.1s ease;
         transform: translateY(0);
@@ -108,9 +106,21 @@ body {
     } */
 }
 
+.btn--reset-scores {
+  top: 85%;
+  left: 26.8%;
+}
+
+.btn--restart-game {
+  -webkit-box-shadow: 7px 7px 9px black;
+          box-shadow: 7px 7px 9px black;
+  top: 60%;
+  left: 42.2%;
+}
+
 .btn:active {
-  -webkit-transition: all 0.09s ease;
-  transition: all 0.09s ease;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
   -webkit-box-shadow: 5px 5px 7px black;
@@ -125,11 +135,14 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
-  color: black;
+  color: white;
 }
 
 #winning-message {
+  color: black;
   background-color: #949090;
+  -webkit-box-shadow: 5px 5px 20px black;
+          box-shadow: 5px 5px 20px black;
   text-align: center;
   width: 50%;
   margin: 15rem auto 0 auto;

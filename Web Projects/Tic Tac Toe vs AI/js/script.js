@@ -1,13 +1,10 @@
-//alert("Hello");
 
- let winner  = false;
  let board = {
     map: [
         ['', '', ''],
         ['', '', ''],
         ['', '', '']
-    ], 
-
+    ],
     render: function(){
         var position = 1;
         for(let i = 0; i < 3; i++){
@@ -41,6 +38,71 @@
 
 function Game(){
     ob = {};
+    ob.winner = false;
+    ob.allowed = true;
+    ob.attempts = 0;
+
+    ob.w1 = [ [0,0],[1,0],[2,0] ],
+    ob.w2 = [ [0,1],[1,1],[2,1] ],
+    ob.w3 = [ [0,2],[1,2],[2,2] ],
+    
+    // Checking rows
+    ob.w4 = [ [0,0],[0,1],[0,2] ],
+    ob.w5 = [ [1,0],[1,1],[1,2] ],
+    ob.w6 = [ [2,0],[2,1],[2,2] ],
+    
+    
+    // Checking Diagonals
+    ob.w7 = [ [0,0],[1,1],[2,2] ],
+    ob.w8 = [ [0,2],[1,1],[2,0] ]
+
+    ob.check = function(w, board, currentPlayer){
+        let spot1 = w[0];
+        let spot2 = w[1];
+        let spot3 = w[2];
+        let i = 0;
+        let j = 1;
+
+        if( (board[  spot1[i]  ] [  spot1[j]   ] == currentPlayer) &&
+            (board[  spot2[i]  ] [  spot2[j]   ] == currentPlayer) &&
+            (board[  spot3[i]  ] [  spot3[j]   ] == currentPlayer) ){
+
+                // Removing Click Button Event From The Squares
+                this.removeClickButtonToAllSquares();
+                let winningMessage = document.getElementById("winning-message-block");
+                winningMessage.style.display = "block";
+                var win = document.getElementById("winning-message");
+                win.style.display = "block";
+                win.textContent = "The winner is " +currentPlayer;
+                document.querySelector(".btn--restart-game").addEventListener("click", this.restartGame, {once: true});
+                game.winner = true;
+            }
+            else if(this.attempts >= 9 && this.winner == false){
+                    this.removeClickButtonToAllSquares();
+                    let winningMessage = document.getElementById("winning-message-block");
+                    winningMessage.style.display = "block";
+                    var win = document.getElementById("winning-message");
+                    win.style.display = "block";
+                    win.textContent = "Draw"
+                    document.querySelector(".btn--restart-game").addEventListener("click", this.restartGame, {once: true});
+                }
+    },
+
+    ob.checkWinner = function(board, currentPlayer){    
+        // Checking For Rows
+        this.check(this.w4 , board, currentPlayer);
+        this.check(this.w5, board, currentPlayer);
+        this.check(this.w6, board, currentPlayer);
+
+        // this.Checking For Cols
+        this.check(this.w1, board, currentPlayer);
+        this.check(this.w2, board, currentPlayer);
+        this.check(this.w3, board, currentPlayer);
+
+        // this.Checking For Diagonals
+        this.check(this.w7, board, currentPlayer);
+        this.check(this.w8, board, currentPlayer);
+    },
 
     ob.addClickButtonToAllSquares = function(){
         for(let i = 1; i <= 9; i++ ){
@@ -64,8 +126,7 @@ function Game(){
 
     ob.notAllowedBackgroundColor = function(){
         for(let i = 1; i <= 9; i++ ){
-            var a = document.querySelector(".board__square--"+i).classList.add("not-allowed");
-            console.log(a);
+            document.querySelector(".board__square--"+i).classList.add("not-allowed");
         }
     }
 
@@ -82,17 +143,40 @@ function Game(){
             currentPlayer = p2;
             setTimeout(() => {
                 p2.takeTurn();
-            }, 500);
+            }, 200);
         }
         else{
             currentPlayer = p1;
             game.addClickButtonToEmptySquares();
         }
          
-    }
+    },
 
-    ob.checkWinner = function(currentPlayer){ 
+    ob.removeXsAndOsFromTheSquares = function(){
+        for(let i = 1; i <= 9; i++ ){
+            document.querySelector(".board__square--"+i).textContent = "";
+        }
+    },
 
+    ob.restartGame = function(){
+        console.log("resatring the game");
+        // Removing Already Played O's and X's From the Board
+        board.map = [
+            ['', '', ''],
+            ['', '', ''],
+            ['', '', '']
+        ];
+
+        // Removing Already O's and X's From the Squares
+        ob.removeXsAndOsFromTheSquares();
+        ob.allowedBackgroundColor();
+        ob.addClickButtonToAllSquares();
+        let winningMessage = document.getElementById("winning-message-block");
+        winningMessage.style.display = "none";
+        game.allowed = true;
+        game.attempts = 0;
+        game.winner = false;
+        currentPlayer = p1;
     }
     return ob;
 }
@@ -100,10 +184,10 @@ function Game(){
 function AI(name, symbol){
     this.name = name;
     this.symbol = symbol;
+    this.score = 0;
 
     this.takeTurn = function(){
-        console.log(this.name);
-        //this.bio();
+       // console.log("Check Here = " + winner);
         this.pickRandomSquare();
     }
 
@@ -127,22 +211,25 @@ function AI(name, symbol){
     this.placeSymbol = function(i, j){
         board['map'][i][j] = symbol;
         board.render();
+        game.attempts++;
+        game.checkWinner(board.map, symbol);
         game.switchPlayer();
         game.allowedBackgroundColor();
-        allowed = true;
+        game.allowed = true;
     }
 }
 function Player(name, symbol){
     this.name = name;
     this.symbol = symbol;
+    this.score = 0;
 
     this.takeTurn = function(e){
-        if(allowed === true){
+        if(game.allowed === true){
             var arrIndices = getIndicesOfMatchedBoardSpotWrtSquares(e.target.id);
             var ithRowIdx = arrIndices[0];
             var jthColIdx = arrIndices[1];
             placeSymbol(board, symbol, ithRowIdx, jthColIdx);
-            allowed = false;
+            game.allowed = false;
             game.notAllowedBackgroundColor();
         }
         
@@ -151,7 +238,12 @@ function Player(name, symbol){
     placeSymbol = function(board, symbol, i, j){
         board['map'][i][j] = symbol;
         board.render();
-        game.switchPlayer();
+        game.attempts++;
+        game.checkWinner(board['map'] , symbol);
+        if(game.winner === false ){
+            console.log("Switching Player coz no winner right now");
+            game.switchPlayer();
+        }
         game.removeClickButtonToAllSquares();
     }
 }
@@ -205,5 +297,4 @@ const p1 = new Player("Talha Imran", "X");
 const p2 = new AI("Computer", "O");
 const game = Game();
 let currentPlayer = p1;
-let allowed = true;
 game.addClickButtonToAllSquares(); 

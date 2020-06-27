@@ -7,12 +7,14 @@
     left: 0;
     //transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.9);
-    color: black;
+    color: white;
 }
 
 
 #winning-message{
+    color: black;
     background-color: rgb(148, 144, 144);
+    box-shadow: 5px 5px 20px black;
     text-align: center;
     width: 50%;
     margin: 15rem auto 0 auto;
