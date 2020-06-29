@@ -44,43 +44,13 @@ function previousReview(){
     }
     else{
         currentReview--;
-        let img = reviews[currentReview].img;
-        let name = reviews[currentReview].name;
-        let job = reviews[currentReview].job;
-        let review = reviews[currentReview].review;
-    
-        let x = document.getElementById("img");
-        x.setAttribute('src', reviews[currentReview].img);
-        
-        let y = document.getElementById("name");
-        y.textContent = reviews[currentReview].name;
-    
-        let z = document.getElementById("job");
-        z.textContent = reviews[currentReview].job;
-    
-        let w = document.getElementById("review");
-        w.textContent = reviews[currentReview].review;
+        defaultReview(currentReview);
     }
 } 
 
  function nextReview(){
     currentReview++;
-    let img = reviews[currentReview].img;
-    let name = reviews[currentReview].name;
-    let job = reviews[currentReview].job;
-    let review = reviews[currentReview].review;
-
-    let x = document.getElementById("img");
-    x.setAttribute('src', reviews[currentReview].img);
-
-    let y = document.getElementById("name");
-    y.textContent = reviews[currentReview].name;
-
-    let z = document.getElementById("job");
-    z.textContent = reviews[currentReview].job;
-
-    let w = document.getElementById("review");
-    w.textContent = reviews[currentReview].review;
+    defaultReview(currentReview);
 } 
 
 function randomReview(){

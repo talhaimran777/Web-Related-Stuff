@@ -51,8 +51,8 @@ body{
 .review-section__container--img{
     background-position: center;
     background-size: cover;
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
     border-radius: 50%;
     box-shadow: 6px -3px 2px rgb(21, 176, 223);
     margin: 0 auto 1rem auto;
@@ -103,17 +103,21 @@ body{
     border: 2px solid rgb(21, 176, 223);
     font-size: 1.5rem;
     color: rgb(21, 176, 223);
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     border-radius: 2.5rem;
     cursor: pointer;
 }
 .btn:hover{
-    transition: all 0.2s ease;
-    transform: scale(1.1);
+    transition: all 0.3s ease;
+    transform: scale(1.2);
+    font-size: 1.6rem;
+    width: 17rem;
+    background-color: rgb(21, 176, 223);
+    color: white;
 }
 
 
-.far{
+.fa-comment-alt{
     position: absolute;
     top: 4.1rem;
     left: 25.9rem;
