@@ -1,0 +1,122 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    text-rendering: optimizeLegibility;
+    background-color:white;
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.review-section{
+    height: 90vh;
+}
+
+.review-section__container{
+    background-color: rgb(235, 229, 229);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    top: 50%;
+    left: 50%;
+    padding: 4rem;
+    transform: translate(-50%, -50%);
+    box-shadow: 4px 5px 10px black;
+    text-align: center;
+    border-radius: 2.5rem;
+}
+
+.review-section__heading-primary{
+    position: absolute;
+    top: 8rem;
+    left: 80rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: rgb(21, 176, 223);
+    padding: 0.4rem;
+    border-bottom: 2px solid rgb(21, 176, 223);
+    border-bottom-style: dotted;
+}
+
+.review-section__container--img{
+    background-position: center;
+    background-size: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 6px -3px 2px rgb(21, 176, 223);
+    margin: 0 auto 1rem auto;
+}
+
+.review-section__container--name{
+    font-size: 2.5rem;
+}
+
+.review-section__container--job-text{
+    margin: 0.7rem 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: rgb(21, 176, 223);
+    text-transform: uppercase;
+}
+
+.review-section__container--review-text{
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+}
+
+.review-section__container__btn{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    color: rgb(21, 176, 223);
+    cursor: pointer;    
+}
+
+.fas:hover{
+    transform: scale(1.3);
+}
+
+#review-section__container__btn--1{
+    margin-right: 2rem;
+    transition: all 0.2s ease;
+}
+#review-section__container__btn--2{
+    margin-right: 2rem;
+    transition: all 0.2s ease;
+}
+
+.btn{
+    padding: 0.5rem;
+    width: 15rem;   
+    margin: 0 auto;
+    border: 2px solid rgb(21, 176, 223);
+    font-size: 1.5rem;
+    color: rgb(21, 176, 223);
+    transition: all 0.2s ease;
+    border-radius: 2.5rem;
+    cursor: pointer;
+}
+.btn:hover{
+    transition: all 0.2s ease;
+    transform: scale(1.1);
+}
+
+
+.far{
+    position: absolute;
+    top: 4.1rem;
+    left: 25.9rem;
+    font-size: 4rem;
+    color: rgb(21, 176, 223);
+}
