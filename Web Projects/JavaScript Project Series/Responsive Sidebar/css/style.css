@@ -1,0 +1,142 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: white;
+    text-rendering: optimizeLegibility;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.nav-section{
+    position: relative;
+    height: 10rem;
+    background-color: #1DA1F2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding: 0 3rem;
+}
+
+.sidebar-section__links{
+    position: relative;
+    left: -30rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30rem;
+    height: 82.9vh;
+    background-color: rgba(29, 160, 242, 1);
+    color: white;
+    font-size: 2rem;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 3rem;
+    transition: all 0.7s ease-in-out;
+    opacity: 0;
+}
+
+#cross{
+    position: absolute;
+    top: 4rem;
+    left: 25rem;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+}
+
+#cross:hover{
+    color: red;
+    transform: scale(1.3);
+    transition: all 0.3s ease;
+}
+
+.sidebar-section__links--link{
+    display: inline-block;
+}
+
+.sidebar-section__links--link a{
+    color: white;
+    text-decoration-line: none;
+}
+
+.sidebar-section__links--link a:hover{
+    color: white;
+    text-decoration-line: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid darkblue;
+}
+
+.toggle-sidebar{
+    left: 0rem;
+    transition: all 0.7s ease-in-out;
+    opacity: 1;
+}
+
+.nav-section__nav-logo{
+    margin-right: auto;
+    font-size: 2.8rem;
+    text-shadow: 3px 4px 10px black;
+}
+
+.nav-section__nav-logo h1{
+    display: inline-block;
+    font-weight: 300;
+}
+
+.nav-section__nav-logo h3{
+    display: inline-block;
+    font-weight: 600;
+    color: darkblue;
+    text-transform: uppercase;
+}
+
+.fab{
+    margin: 0.4rem;
+    font-size: 1.8rem;
+}
+.fab:hover{
+    cursor: pointer;
+    
+}
+
+.hamburger{
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translate(-3%,  -50%);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.hamburger:hover{
+    transform: rotate(90deg) translate(-30%);
+    transition: all 0.2s ease-in-out;
+}
+
+.line{
+    width: 4rem;
+    height: 0.3rem;
+    margin: 0.7rem;
+    background-color: white;
+}
+
+
+@media screen and (max-width: 768px){
+    .sidebar-section__links{
+        width: 100%;
+    }
+
+    #cross{
+        left: 90%;
+    }
+}
