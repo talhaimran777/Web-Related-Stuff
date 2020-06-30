@@ -132,6 +132,10 @@ body{
 
 
 @media screen and (max-width: 768px){
+
+    .sidebar-section__links{
+        height: 82.5vh;
+    }
     .sidebar-section__links{
         width: 100%;
     }
