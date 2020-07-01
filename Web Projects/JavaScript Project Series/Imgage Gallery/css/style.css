@@ -1,0 +1,118 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+    text-rendering: optimizeLegibility;
+    color: black;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+}
+
+.image-gallery{
+    height: 100vh;
+}
+
+.image-gallery__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.image-gallery__main{
+    position: relative;
+    flex: 60%;
+    background-color: brown;
+}
+
+.image-gallery__main--heading{
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    font-weight: 400;
+    font-size:  5rem;
+    color: white;
+    margin-top: 2rem;
+}
+
+.image-gallery__main--image{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 50rem;
+    width: 85%;
+    background-color: red;
+    margin-top: 3rem;
+    box-shadow: 3px 3px 7px black;
+}
+
+.image-gallery__images{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 20%;
+    padding: 3rem;
+    justify-content: space-around;
+}
+
+.image-gallery__images--heading{
+    text-align: center;
+    flex: 100%;
+    margin-bottom: 4rem;
+    font-weight: 400;
+    font-size: 6rem;
+    font-family: 'Great Vibes', cursive;
+    color: brown;
+}
+
+.composition .image-gallery__images--image:not(:hover){
+    transition: all 0.2s ease-in-out;
+}
+.composition:hover .image-gallery__images--image:not(:hover){
+    transform: scale(0.90);
+    transition: all 0.2s ease-in-out;
+}
+.image-gallery__images--image{
+    margin: 1rem;
+    box-shadow: 3px 3px 7px black;
+}
+
+.image-gallery__images--image:hover{
+    transform: scale(1.1);
+    outline: 1rem solid brown;
+    outline-offset: 0.6rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.image-gallery__images--heading{
+    font-weight: 400;
+    
+}
+
+.line{
+    position: absolute;
+    width: 15rem;
+    height: 4px;
+    background-color: brown;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -17%);
+}
+
+/* top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); */

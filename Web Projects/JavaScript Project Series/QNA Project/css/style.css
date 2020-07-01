@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-shadow: border-box;
+}
+
+html{
+    font-size: 63.5%;
+}
+
+body{
+    background-color: white;
+    color: black;
+    text-rendering: optimizeLegibility;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.qna-section{
+    height: 100vh;
+}
+
