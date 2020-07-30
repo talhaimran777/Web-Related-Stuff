@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="../Budgety/css/style.css">
+    <title>Budget App</title>
+</head>
+<body>
+     <section class="budget-app">
+        <div class="budget-app__display">
+            <div class="budget-app__display__month"> Available Budget In April</div>
+            <div class="budget-app__display__overall-amount"> - 0</div>
+            
+            <div class="budget-app__display__amonut budget-app__display__amonut--income">
+                <p>Income</p>
+                <p>&nbsp;</p>
+            </div>
+            <div class="budget-app__display__amonut budget-app__display__amonut--expense">
+                <p>Expense</p>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+
+        <form class = "budget-app__form">
+            <!-- <div class="dropdown open budget-app__form__dropdown">
+                <button class="btn btn-drop dropdown-toggle" type="button" id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                            Select
+                        </button>
+                <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <button class="dropdown-item">+</button>
+                    <button class="dropdown-item ">-</button>
+                </div>
+            </div> -->
+
+            <select class = "budget-app__form__input budget-app__form__input--menu-btn" name = "">
+                <option class = "budget-app__form__input--menu-btn__option budget-app__form__input--menu-btn__option--inc" value = "inc" selected>+</option>
+                <option class = "budget-app__form__input--menu-btn__option budget-app__form__input--menu-btn__option--exp" value = "exp">-</option>
+            </select>
+
+            <input class = "budget-app__form__input budget-app__form__input--text" type="text" placeholder="Text">
+            <input class = "budget-app__form__input budget-app__form__input--number" type="number"  placeholder="No">
+            <i class="far fa-check-circle budget-app__form__check"></i>
+        </form>
+
+        <div class="budget-app__dynamic-diplay">
+            <div class="budget-app__dynamic-display__item budget-app__dynamic-display__item--income">
+                <h1 class="budget-app__dynamic-display__item__heading budget-app__dynamic-display__item__heading--income"> My Income</h1>
+                <!-- <ul class="budget-app__dynamic-display__item__amounts budget-app__dynamic-display__item__amounts--income">
+                    <li class = "budget-app__dynamic-display__item__amounts__item">
+                        <p class="budget-app__dynamic-display__item__amounts__item__desc budget-app__dynamic-display__item__amounts__item__desc--income">Job</p>
+                        <h1  class="budget-app__dynamic-display__item__amounts__item__amount budget-app__dynamic-display__item__amounts__item__amount--income">+2100</h1>
+                        <i class="far fa-times-circle budget-app__dynamic-display__item__amounts__item__delete budget-app__dynamic-display__item__amounts__item__delete--income"></i>
+                    </li>
+                </ul>  -->
+            </div>
+            
+            <div class="budget-app__dynamic-display__item budget-app__dynamic-display__item--expense">
+                <h1 class="budget-app__dynamic-display__item__heading budget-app__dynamic-display__item__heading--expense"> My Expenses</h1>
+                <!-- <ul class="budget-app__dynamic-display__item__amounts budget-app__dynamic-display__item__amounts--expense">
+                    <li class = "budget-app__dynamic-display__item__amounts__item">
+                        <p class="budget-app__dynamic-display__item__amounts__item__desc budget-app__dynamic-display__item__amounts__item__desc--expense">Job</p>
+                        <h1  class="budget-app__dynamic-display__item__amounts__item__amount budget-app__dynamic-display__item__amounts__item__amount--expense">+2100</h1>
+                        <i class="far fa-times-circle budget-app__dynamic-display__item__amounts__item__delete far fa-times-circle budget-app__dynamic-display__item__amounts__item__delete--expense"></i>
+                    </li>
+                </ul>  -->
+            </div> 
+        </div>
+
+    </section> 
+    <script src="../Budgety/js/script.js"></script>
+</body>
+</html>

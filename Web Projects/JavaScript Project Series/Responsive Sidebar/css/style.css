@@ -35,7 +35,7 @@ body{
     flex-direction: column;
     flex-wrap: wrap;
     width: 30rem;
-    height: 82.9vh;
+    height: 84vh;
     background-color: rgba(29, 160, 242, 1);
     color: white;
     font-size: 2rem;
@@ -134,7 +134,7 @@ body{
 @media screen and (max-width: 768px){
 
     .sidebar-section__links{
-        height: 82.5vh;
+        height: 83.7vh;
     }
     .sidebar-section__links{
         width: 100%;

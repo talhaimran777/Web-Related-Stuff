@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: black;
+  background: white;
+  text-rendering: optimizeLegibility;
+  font-family: 'Roboto', sans-serif;
+}
+
+.game-section {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -15%);
+          transform: translate(-50%, -15%);
+  background: white;
+  width: 114rem;
+  height: 90vh;
+}
+
+.game-section__heading {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 1rem;
+  margin-bottom: 4rem;
+}
+
+.game-section__canvas {
+  background: black;
+  border-radius: 2.5rem;
+}
+/*# sourceMappingURL=pong.css.map */

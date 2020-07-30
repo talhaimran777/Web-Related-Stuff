@@ -1,0 +1,304 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+html{
+    font-size: 62.5%;
+}
+
+
+body{
+    text-rendering: optimizeLegibility;
+    color: black;
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.budget-app{
+    min-height: 100vh;
+}
+
+.budget-app__display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    min-height: 43vh;
+    background-image: linear-gradient(120deg ,rgba(0, 0, 0, 0.926), rgba(0, 0, 0, 0.926)) , url("../img/pic.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.budget-app__display__month{
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: .4rem;
+}
+
+.budget-app__display__overall-amount{
+    font-size: 5.5rem;
+    font-weight: 300;
+}
+
+.budget-app__display__amonut{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    width: 45rem;
+    padding: 2rem;
+    font-size: 2.2rem;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.budget-app__display__amonut--income{
+    background: green;
+}
+
+.budget-app__display__amonut--expense{
+    background: red;
+}
+
+
+.budget-app__form{
+    display: flex;
+    min-height: 6rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 65rem;
+    margin: 2rem auto;
+    border-radius: 5rem;
+    background: silver;
+}
+
+.budget-app__form input{
+    height: 3rem;
+    border: 2px solid #3B52B2;  
+}
+
+.btn-drop {
+    background-color: white;
+    font-size: 1.6rem;
+}
+
+.dropdown-menu{
+    font-size: 1.8rem;
+}
+
+/* .dropdown:hover, .budget-app__form__input:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px black;
+    transition: all 0.2s ease-in-out; 
+}  */
+.budget-app__form__input{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.budget-app__form__input--text{
+    width: 30rem;
+    padding: 1.6rem;
+}
+
+.budget-app__form__input--number{
+    width: 7rem;
+    padding: 1rem;
+}
+
+.budget-app__dynamic-diplay{
+    min-width: 70%;
+    min-height: 25.6rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 2rem;
+    background: rgb(224, 214, 214); 
+    color: black;
+    border-radius: 5px;
+}
+
+.budget-app__dynamic-display__item{
+    display: flex;
+    flex-direction: column;
+    flex: 40%;
+    margin: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+
+.budget-app__dynamic-display__item__heading{
+    font-size: 2.6rem;
+    font-weight: 400;
+    margin-bottom: 3rem;
+}
+
+.budget-app__dynamic-display__item__heading--income{ 
+    color: green;
+}
+
+.budget-app__dynamic-display__item__heading--expense{ 
+    color: red; 
+}
+.budget-app__dynamic-display__item__amounts{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.budget-app__dynamic-display__item__amounts__item{
+    position: relative;
+    width: 30rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+.budget-app__form__check{
+    font-size: 2.9rem;
+    transition: all 0.1s ease-in-out;
+}
+
+.budget-app__form__check:hover{
+    cursor: pointer;
+}
+
+.budget-app__form__check:active{
+    transition: all 0.1s ease-in-out;
+    transform: translateY(2px);
+}
+.budget-app__dynamic-display__item__amounts__item:nth-child(n){
+    border: 2px solid silver;
+}
+
+.budget-app__dynamic-display__item__amounts__item:nth-child(2n){
+    background: rgb(233, 228, 228);
+}
+
+.budget-app__form__check{
+    color: #3B52B2;
+}
+
+.budget-app__dynamic-display__item__amounts__item__desc,
+.budget-app__dynamic-display__item__amounts__item__amount,
+.budget-app__dynamic-display__item__amounts__item__delete{
+    margin: auto 0;
+    font-size: 2rem;
+}
+
+.budget-app__dynamic-display__item__amounts__item__desc--income{
+    color: green;
+}
+
+.budget-app__dynamic-display__item__amounts__item__desc--expense{
+    color: red;
+}
+
+.budget-app__dynamic-display__item__amounts__item__desc{
+    flex: 70%;
+}
+
+.budget-app__dynamic-display__item__amounts__item__amount,
+.budget-app__dynamic-display__item__amounts__item__delete{
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-90%, -50%);
+}
+
+.budget-app__dynamic-display__item__amounts__item__delete{
+    opacity: 0;
+}
+
+.budget-app__dynamic-display__item__amounts__item:hover .budget-app__dynamic-display__item__amounts__item__delete{
+    cursor: pointer;
+    transition: all 0.3s ease-in-out 0.2s;
+    opacity: 1;
+}
+
+.budget-app__dynamic-display__item__amounts__item:hover .budget-app__dynamic-display__item__amounts__item__amount{
+    transition: all 0.3s ease-in-out;
+    left: 70%;
+}
+
+.budget-app__dynamic-display__item__amounts__item__delete--income{
+    color: green;
+}
+
+.budget-app__dynamic-display__item__amounts__item__delete--expense{
+    color: red;
+}
+
+.budget-app__form__input--menu-btn{
+    height: 3rem;
+    width: 5rem;
+    border: 2px solid #3B52B2;
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 968px){
+    .budget-app__display{
+        min-height: 40vh;
+    }
+
+    html{
+        font-size: 55%;
+    }
+
+    .budget-app__dynamic-diplay{
+        min-height: 29.6rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .budget-app__display{
+        min-height: 37vh;
+    }
+
+    html{
+        font-size: 45%;
+    }
+
+    .budget-app__dynamic-diplay{
+        min-height: 38.5rem;
+    }
+}
+
+@media screen and (max-width: 668px){
+    .budget-app__display{
+        min-height: 35vh;
+    }
+
+    .budget-app__dynamic-diplay{
+        min-height: 44.5rem;
+    }
+}
+
+@media screen and (max-width: 568px){
+    .budget-app__display{
+        min-height: 33vh;
+    }
+    .budget-app__dynamic-diplay{
+        font-size: 2rem;
+    }
+    .budget-app__dynamic-diplay{
+        min-height: 50.6rem;
+    }
+}
